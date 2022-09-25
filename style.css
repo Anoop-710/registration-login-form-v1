@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#sign-up-form{
+    width: 800px;
+    margin: 20px auto;
+}
+
+#login-form{
+    width: 800px;
+    margin: 20px auto;
+}
+
+#sign-up-form,#login-form{
+    display: none;
+}

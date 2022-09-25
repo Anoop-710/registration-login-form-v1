@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!--------------------------------------------------------- Navigation bar ----------------------------------------------------------------->
+
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><img src="logo.png" alt="Bootstrap" width="30" height="24">Authentication system</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          
+          
+          
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#" onclick="display_home()" id="home-link">Home</a>
+              
+            </ul>
+            
+            <ul class="navbar-nav mb-2 mb-lg-0"> <!--Remove me-auto class to align items to right -->
+                <li class="nav-item">
+                  <a class="nav-link " aria-current="page" href="#" onclick="display_signUp()" id="sign-up-link">Sign-up</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="#" onclick="display_login()" id="login-link">Login</a>
+                </li> 
+            </ul>
+
+          </div>
+        </div>
+      </nav>
+    
+    <!--------------------------------------------------------- Home page ----------------------------------------------------------------->
+
+    <div class="container" style="text-align: center;" id="home"> <!-- Gives a good margin from both the sides along horizontal axis -->
+      <h1 class="display-2" >Authentication system</h1>
+      <img src="logo.png" alt="" width="100px" height="100px">
+      <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus tempora, eligendi, dolorem, numquam iste esse nulla harum voluptatum quidem omnis accusantium delectus hic. Fugit rem voluptate quidem eligendi harum possimus. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam, doloremque assumenda accusantium eaque ut rerum accusamus in ab neque iste, saepe quo porro, fugiat id consequatur iusto expedita ducimus asperiores.</p>
+      <!-- lead class from bootstrap gives appealing fonts -->
+
+      <hr> <!-- draws horizontal line-->
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque cum vero porro dolore odit voluptatum minima accusamus voluptatibus facilis! Maiores ea numquam ipsam in id repellendus, voluptas iure autem facilis.</p>
+    </div>
+
+<!--------------------------------------------------------- Sign-up form ----------------------------------------------------------------->
+
+<div id="sign-up-form">
+  <form class="row g-3" id="sign-up-form-reset">
+    <h1 style="text-align: center;">Sign Up Form</h1>
+    <div class="col-md-6">
+      <label for="first-name" class="form-label">First name</label>
+      <input type="text" class="form-control" id="first-name"  autocomplete="off">
+      <div class="val id-feedback">
+        Looks good!
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <label for="last-name" class="form-label">Last name</label>
+      <input type="text" class="form-control" id="last-name"  autocomplete="off">
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <label for="email" class="form-label">Email</label>
+      <div class="input-group has-validation">
+        <span class="input-group-text" id="inputGroupPrepend">@</span>
+        <input type="text" class="form-control" id="email" aria-describedby="inputGroupPrepend" autocomplete="off">
+        <div class="invalid-feedback">
+          Please enter a valid email.
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <label for="phone-number" class="form-label">Phone Number</label>
+      <div class="input-group has-validation">
+        <span class="input-group-text" id="inputGroupPrepend">+91</span>
+        <input type="text" class="form-control" id="phone-number" aria-describedby="inputGroupPrepend" autocomplete="off">
+        <div class="invalid-feedback">
+          Please enter a valid phone number.
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <label for="password" class="form-label">Password</label>
+      <input type="password" class="form-control" id="password" >
+      <div class="invalid-feedback">
+        Please enter a password
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <label for="confirm-password" class="form-label">Confirm password</label>
+      <input type="password" class="form-control" id="confirm-password" >
+      <div class="invalid-feedback" id="invalid-confirm-password">
+        Password doesn't match.
+      </div>
+    </div>
+
+
+    <div class="col-12" style="text-align: center">
+      <button class="btn btn-dark" type="button" onclick="signUp()" >Sign up</button>
+    </div>
+  </form>
+</div>
+
+
+  <!--------------------------------------------------------- Login form ----------------------------------------------------------------->
+
+  <div id="login-form">
+    <form class="row g-3 justify-content-center" >
+      <h1 style="text-align: center;">Login Form</h1>
+      
+      <div class="col-md-8">
+        <label for="login-email" class="form-label">Email</label>
+        <div class="input-group has-validation">
+          <span class="input-group-text" id="inputGroupPrepend">@</span>
+          <input type="text" class="form-control" id="login-email" aria-describedby="inputGroupPrepend" autocomplete="off">
+          <div class="invalid-feedback">
+            Please enter a valid email.
+          </div>
+        </div>
+      </div>
+  
+  
+      <div class="col-md-8">
+        <label for="login-password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="login-password" >
+        <div class="invalid-feedback">
+          Please enter a password
+        </div>
+      </div>
+  
+  
+      <div class="col-12" style="text-align: center">
+        <button class="btn btn-dark" type="submit" onclick="login()">Login</button>
+      </div>
+    </form>
+  </div>
+  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>
